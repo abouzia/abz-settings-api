@@ -1,29 +1,17 @@
-# WP Simple Plugin Starter
+# WordPress Plugin: Practicing Settings API with Clean Architecture
 
 ## Description
 
-This is a simple WordPress plugin starter. It provides a basic structure that you can use to build your own custom WordPress plugins.
+This is a WordPress plugin project that practices using the Settings API with clean architecture principles. The goal of this project is to create a robust and maintainable WordPress plugin.
+
+## Features
+
+- Utilizes the WordPress Settings API
+- Implements clean architecture principles
+- Easy to install and use
 
 ## Installation
 
-1. Download the plugin and extract the files.
-2. Upload the extracted `wp-simple-plugin-starter` folder to the `/wp-content/plugins/` directory.
-3. Activate the plugin through the 'Plugins' menu in WordPress.
-
-## Usage
-
-After activating the plugin, you can start using it immediately. If the plugin includes settings, you can configure them in the WordPress admin panel.
-
-## Contributing
-
-Contributions are welcome! To contribute:
-
-1. Fork the repository.
-2. Create your feature branch (`git checkout -b feature/fooBar`).
-3. Commit your changes (`git commit -am 'Add some fooBar'`).
-4. Push to the branch (`git push origin feature/fooBar`).
-5. Create a new Pull Request.
-
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
+1. Download the plugin from the GitHub repository.
+2. Upload the plugin files to the `/wp-content/plugins/` directory, or install the plugin through the WordPress plugins screen directly.
+3. Activate the plugin through the 'Plugins' screen in WordPress.
