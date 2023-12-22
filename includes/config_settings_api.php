@@ -49,22 +49,40 @@ function abz_settings_api_plugin_sections()
     );
 }
 
-function abz_settings_api_render_main_section() {
+function abz_settings_api_render_main_section()
+{
     echo '<p>Main Section</p>';
 }
 
-function abz_settings_api_sanitize($input) {
+function abz_settings_api_sanitize($input)
+{
+    if (isset($input['abz_text_field'])) {
+        $input['abz_text_field'] = sanitize_text_field($input['abz_text_field']);
+    }
+    
+    if (isset($input['abz_checkbox_field'])) {
+        $input['abz_checkbox_field'] = absint($input['abz_checkbox_field']);
+    } else {
+        $input['abz_checkbox_field'] = 0;
+    }
+
     return $input;
 }
 
-function abz_settings_api_render_text_field($args) {
+function abz_settings_api_render_text_field($args)
+{
     extract($args);
-    $options = get_option('abz_settings_api_options');
-    echo '<input type="text" name="' . $name . '" id="' . $name . '" value="' . $options[$name] . '" />';
+    $options = abz_settings_api_add_options();
+    $option_value = esc_html($options[$name]);
+
+    echo '<input type="text" name="abz_settings_api_options[' . $name . ']" value="' . $option_value . '" />';
 }
 
-function abz_settings_api_render_checkbox_field($args) {
+function abz_settings_api_render_checkbox_field($args)
+{
     extract($args);
-    $options = get_option('abz_settings_api_options');
-    echo '<input type="checkbox" name="' . $name . '" id="' . $name . '" ' . checked(1, $options[$name], false) . ' />';
+    $options = abz_settings_api_add_options();
+    $is_checked = checked($options[$name], 1, false);
+
+    echo '<input type="checkbox" name="abz_settings_api_options[' . $name . ']" value="1" ' . $is_checked . ' />';
 }

@@ -16,16 +16,10 @@ function abz_settings_api_admin_menu()
 function abz_settings_api_admin_page() {
     echo '<div class="wrap">';
     echo '<h1>Settings API</h1>';
-    echo '<form action="options.php" method="post">';
+    echo "<form method='post' action='options.php' name='abz_settings_api_form'>";
     settings_fields('abz_settings_api_settings');
     do_settings_sections('abz-settings-api');
-    submit_button(
-        'Save',
-        'primary',
-        'submit',
-        false,
-        array('id' => 'submit')
-    );
+    submit_button();
     echo '</form>';
     echo '</div>';
 }
